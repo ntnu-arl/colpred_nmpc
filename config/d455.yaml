@@ -1,0 +1,16 @@
+hfov: 0.785
+vfov: 0.442
+depth_max: 5
+shape_imgs:
+    - 1
+    - 270
+    - 480
+extrinsics:
+    position:
+        - 0.09
+        - 0.04
+        - 0.024
+    orientation:
+        - 0
+        - 0
+        - 0

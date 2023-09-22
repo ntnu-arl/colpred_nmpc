@@ -1,0 +1,16 @@
+numpy
+scikit-learn
+pynput
+casadi
+# ml-casadi  # to be installed externally
+# acados_template  # to be installed externally
+argparse
+torch
+torchvision
+torchinfo
+pyyaml
+h5py
+warp-lang
+opencv-python
+trimesh
+collection

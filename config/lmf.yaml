@@ -1,0 +1,5 @@
+limits:
+    vx: 1
+    vz: 0.5
+    ax: 3
+    wz: 1

@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+<world name="mrsim">
+    <physics type='ode'>
+        <max_step_size>0.002000</max_step_size>
+        <real_time_factor>1.000000</real_time_factor>
+        <real_time_update_rate>500.000000</real_time_update_rate>
+        <gravity>0 0 -9.81</gravity>
+        <magnetic_field>23.816e-6 -0.41e-6 -39.829e-6</magnetic_field>
+    </physics>
+
+    <include>
+        <uri>model://ground_plane</uri>
+    </include>
+    <include>
+        <uri>model://sun</uri>
+    </include>
+
+    <model name="QR_0">
+        <pose>0 0 0.2 0 0 0</pose>
+        <include>
+            <uri>model://mrsim-quadrotor</uri>
+            <name>qr</name>
+        </include>
+        <include>
+            <uri>model://mrsim-depth-camera</uri>
+            <name>camera</name>
+            <pose>0.2 0 -0.04  1.5708 3.1415 1.5708</pose>
+        </include>
+        <joint name="camera" type="fixed">
+            <parent>qr::base</parent>
+            <child>camera::main</child>
+        </joint>
+    </model>
+
+
+    <model name="w1">
+        <pose>0 3.1 0 0 0 0</pose>
+        <include>
+            <uri>model://wall</uri>
+            <name>w1</name>
+        </include>
+    </model>
+
+    <model name="w2">
+        <pose>0 -3.1 0 0 0 0</pose>
+        <include>
+            <uri>model://wall</uri>
+            <name>w2</name>
+        </include>
+    </model>
+
+    <model name="w3">
+        <pose>3.1 0 0 0 0 1.56</pose>
+        <include>
+            <uri>model://wall</uri>
+            <name>w3</name>
+        </include>
+    </model>
+
+    <model name="w4">
+        <pose>-3.1 0 0 0 0 1.56</pose>
+        <include>
+            <uri>model://wall</uri>
+            <name>w4</name>
+        </include>
+    </model>
+
+    <plugin name="optitrack" filename="optitrack-gazebo.so">
+        <hz>1000</hz>
+        <port>1509</port>
+        <publish>
+            <link>QR_0::qr::base</link>
+            <name>QR_0</name>
+        </publish>
+    </plugin>
+</world>
+</sdf>

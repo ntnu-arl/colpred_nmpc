@@ -1,0 +1,13 @@
+mass: 1.39
+arm_length: 0.23
+inertia:
+    - 0.015
+    - 0.015
+    - 0.007
+c_f: 5.9e-4
+c_t: 1.0e-5
+limits:
+    vx: 1.5
+    vz: 1
+    ax: 3
+    wz: 1

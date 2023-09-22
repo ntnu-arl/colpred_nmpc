@@ -1,0 +1,41 @@
+## config files
+drone_config: 'lmf.yaml'
+camera_config: 'd455.yaml'
+weight_file: 'inflated'
+# weight_file: 'depth_state_check'
+logfile: '../logs/nmpc.log'
+horizon_logfile: '../logs/nmpc_horizon.log'
+
+## parameters
+N: 10  # nb of shooting nodes
+T: 3  # lenght of horizon [s]
+size_latent: 128
+control_loop_time: 20  # minimum control period [ms]
+
+zref: 1  # desired hovering z
+vref: 1  # norm of reference velocity [m/s]
+p_des:  # destination (x,y wrt current initial position)
+    - 2
+    - 0
+
+## flags
+simulation: False
+use_depth: True
+use_current_z: True
+use_hole_filling: True
+enable_colpred: True
+colpred_cost: True
+colpred_constraint: True
+
+## ros topics
+ros_topics:
+    depth_input: /d455/depth/image_rect_raw
+    depth_output: /nmpc_colpred/processed_image
+    odom: /mavros/local_position/odom_in_map
+    vel_cmd: /mavros/setpoint_velocity/cmd_vel_unstamped
+    vel_cmd_stamped: /nmpc_colpred/cmd_vel_stamped
+    traj_horizon: /nmpc_colpred/traj_horizon
+ros_srv:
+    start: /nmpc_colpred/startstop
+    goto: /nmpc_colpred/goto
+    flag: /nmpc_colpred/toggle_colpred

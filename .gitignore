@@ -1,0 +1,10 @@
+__pycache__/
+c_generated_code/
+*.json
+*.log
+*.pt
+*.pth
+logs/*
+!**/.gitkeep
+*.egg-info/
+*.swp

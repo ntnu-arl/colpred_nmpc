@@ -1,0 +1,41 @@
+## files
+drone_config: 'quad_gazebo.yaml'
+camera_config: 'camera.yaml'
+weight_file: 'inflated'
+# weight_file: 'depth_state_check'
+logfile: '../logs/nmpc.log'
+horizon_logfile: '../logs/nmpc_horizon.log'
+
+## parameters
+N: 10  # nb of shooting nodes
+T: 4  # lenght of horizon [s]
+size_latent: 128
+control_loop_time: 2  # minimum control period [ms]
+
+zref: 1  # desired hovering z
+vref: 2  # norm of reference velocity [m/s]
+p_des:  # destination (x,y wrt current initial position)
+    - 10
+    - 0
+
+## flags
+simulation: True
+use_depth: True
+use_current_z: False
+use_hole_filling: True
+enable_colpred: True
+colpred_cost: True
+colpred_constraint: True
+
+## ros topics
+ros_topics:
+    depth_input: /m100/depth_image
+    depth_output: /nmpc_colpred/processed_image
+    odom: /m100/odom
+    vel_cmd: /m100/cmd_vel
+    vel_cmd_stamped: /nmpc_colpred/cmd_vel_stamped
+    traj_horizon: /nmpc_colpred/traj_horizon
+ros_srv:
+    start: /nmpc_colpred/startstop
+    goto: /nmpc_colpred/goto
+    flag: /nmpc_colpred/toggle_colpred
