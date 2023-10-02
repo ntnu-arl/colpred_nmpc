@@ -2,7 +2,7 @@
 
 This repository contains the framework using in our paper called: "Nonlinear Model Predictive Control for Deep Neural Network-Based
 Collision Avoidance exploiting Depth Images", submitted to ICRA 2023.
-The associated (temporary) video can be seen at https://youtu.be/aELjlfwAjfk. 
+The associated (temporary) video can be seen at https://youtu.be/aELjlfwAjfk.
 
 
 ## Installation
@@ -39,7 +39,7 @@ The repo folder is organized as follow:
 
 ## Usage
 
-TODO upload weights + data somewhere?
+The training dataset and neural network weights will be uploaded soon.
 
 ### Training
 
@@ -65,20 +65,21 @@ NOTE: When using ml-casadi, PyTorch builds the graph on first execution. Thus, t
 The main script thus processes a fake image once to prevent the first control iteration to be slow.
 
 
-## Cite
+<!-- ## Cite
 
 When using this work in your research, please cite the following publication:
 
 ```
 @INPROCEEDINGS{jacquet2023cpnmpc,
       author={Martin Jacquet and Kostas Alexis},
-      title={TODO},
+      title={Nonlinear Model Predictive Control for Deep Neural Network-Based
+      Collision Avoidance exploiting Depth Images},
       year={2023},
       eprint={TODO},
       archivePrefix={arXiv},
       primaryClass={cs.RO}
 }
-```
+``` -->
 
 
 ## Ackowledgements
