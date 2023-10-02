@@ -61,6 +61,7 @@ if __name__ == '__main__':
         nb_points = 4000000
 
 
+        ## COMPUTE CLASSIFICATION METRICS
         grid, grid_normalized = colcheck.sample_pos_in_frustrum(nb_points)
         # grid, grid_normalized = c olcheck.sample_pos_in_safeball(nb_points)
         gt = colcheck.check_image_points(collision_img[0,0,:,:], grid)
@@ -83,6 +84,7 @@ if __name__ == '__main__':
         print(i, ratio_col_gt, ratio_col_pred, accuracy, precision, recall)
 
 
+        ## DISPLAYS 2D CLASSFICIATION RESULTS (slices in the depth image)
         # angles = [20,10,0,-10,-20]
         # nb_pix_v = shape_imgs[1]
         # fig = plt.figure(str(i))
@@ -126,6 +128,7 @@ if __name__ == '__main__':
         # plt.show()
 
 
+        ## DISPLAYS 3D CLASSFICIATION RESULTS (sampled point cloud)
         # # grid, grid_normalized = colcheck.sample_pos_in_safeball(nb_points, True)
         # grid, grid_normalized = colcheck.sample_pos_in_frustrum(nb_points, False)
         # # grid, grid_normalized = colcheck.grid_frustrum(nb_points)
