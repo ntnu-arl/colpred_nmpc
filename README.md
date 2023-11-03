@@ -1,7 +1,7 @@
 # Collision Predictor NMPC
 
 This repository contains the framework using in our paper called: "Nonlinear Model Predictive Control for Deep Neural Network-Based
-Collision Avoidance exploiting Depth Images", submitted to ICRA 2023.
+Collision Avoidance exploiting Depth Images", submitted to ICRA 2024.
 The associated (temporary) video can be seen at https://youtu.be/aELjlfwAjfk.
 
 
