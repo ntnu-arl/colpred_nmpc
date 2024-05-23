@@ -39,7 +39,10 @@ The repo folder is organized as follow:
 
 ## Usage
 
-The training dataset and neural network weights will be uploaded soon.
+The training dataset is accessible (as `.tar.gz`) at https://ntnu.box.com/v/colpred-nmpc-dataset.
+One needs to zip the training images, and modify the `COLPREDMPC_DATA_DIR` variable in https://github.com/ntnu-arl/colpred_nmpc/blob/ff2df9dd0d5d8c3e56cf4f3bbedfcd49e5083455/colpred_nmpc/__init__.py#L4C1-L4C20 to point to the new data folder.
+
+The NN weights used in the paper experiments are available at https://ntnu.box.com/v/colpred-nmpc-weights.
 
 ### Training
 
